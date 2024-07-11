@@ -1,0 +1,37 @@
+<?php
+session_start();
+?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitzy: Fitness Made Easy</title>
+    <style>
+        button{
+            height: 38px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="background-color: #7bcaff; padding: 25px;">Fitzy: Fitness Made Easy</h1>
+    <h3>ABOUT US</h3>
+    <p>”Fitzy” is a Health and wellness-based Web application. Users can work on their health by performing exercises to get fit, follow a diet by encouraging healthy eating habits, improve focus by meditating, track their daily activities. Users just need to choose a level of complexity and a set of exercises they prefer. 3D models, videos, or just detailed descriptions explain how to perform each workout.</p>
+
+    <?php 
+
+    if(isset($_SESSION['email']) && isset($_SESSION['password'])) {
+        echo "<button><a href='logout.php'>Logout</a></button>";
+    }
+    else {
+        echo "<button><a href='Login/login.php'>Login</a></button>";
+    }
+    
+    ?>
+</body>
+</html>
